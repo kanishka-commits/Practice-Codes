@@ -1,3 +1,7 @@
+/*
+CodeChef:https://www.codechef.com/problems/TWOCLOSE?tab=ide
+*/
+
 #include <bits/stdc++.h>
 #define ll long long int
 using namespace std;
