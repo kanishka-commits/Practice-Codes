@@ -6,8 +6,8 @@
 class Solution {
 public:
     vector<string> findRepeatedDnaSequences(string s) {
-        set<string> st;
-        set<string> finalset;
+        unordered_set<string> st;
+        unordered_set<string> finalset;
         vector<string> ans;
         int left=0;
         if(s.size()<10) return ans;
@@ -22,6 +22,8 @@ public:
     }
 };
 ```
+Use unordered_set<string> (hash-based), thus we get O(1) avg lookup
+while using set<string> (tree-based0 we get  O(log n) lookup
 
 ### B. 395 Longest Substring with At Least K Repeating Characters
 
