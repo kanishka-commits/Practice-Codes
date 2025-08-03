@@ -3,8 +3,9 @@
 ```
 r=0
 while(right<s.size()){
+    add s[right] to the window
     if(!condition){    //condition: s[right] is approving the condition or not  
-        remove s[left] from where ever added
+        remove s[left] from where ever added (from window )
         left++
     }
 }
