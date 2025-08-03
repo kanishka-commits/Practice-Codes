@@ -94,7 +94,31 @@ public:
 };
 ```
 
+### C. 424 Longest Repeating Character Replacement
 
+```
+class Solution {
+public:
+    int characterReplacement(string s, int k) {
+        int max_count = 0;
+        int left = 0;
+        vector<int> freq(26, 0);
 
+        for (int right = 0; right < s.length(); ++right) {
+            freq[s[right] - 'A']++;
+            max_count = max(max_count, freq[s[right] - 'A']);
+
+            // Correct condition: right - left + 1 <= max_count + k 
+            if ((right - left + 1) - max_count > k) {  
+                freq[s[left] - 'A']--;
+                left++;
+            }
+        }
+
+        return s.length() - left;
+    }
+};
+
+```
 
 
