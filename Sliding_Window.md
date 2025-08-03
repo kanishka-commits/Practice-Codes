@@ -1,5 +1,15 @@
 ## SLIDING WINDOW
 
+```
+r=0
+while(right<s.size()){
+    if(!condition){    //condition: s[right] is approving the condition or not  
+        remove s[left] from where ever added
+        left++
+    }
+}
+```
+
 ### A. 187 Repeated DNA Sequences
 
 ```cpp
