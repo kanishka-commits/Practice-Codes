@@ -11,6 +11,34 @@ while(right<s.size()){
 }
 ```
 
+Sliding window deals with expansion, if condition met || condition not met (l increase or r increases)
+thus in cases where both expansion and decrement required when condition is met, Sliding window is not used
+
+take eg of :
+    Counting number of subarrays with sum k (+ve, may work)
+```cpp
+int left = 0, right = 0, sum = 0, count = 0;
+int n = nums.size();
+
+while (right < n) {
+    sum += nums[right];
+
+    // Shrink the window if sum > k
+    while (sum > k && left <= right) {
+        sum -= nums[left];
+        left++;
+    }
+
+    // If sum == k, count it
+    if (sum == k) {
+        count++;
+    }
+
+    right++;
+    }
+```
+but for counting in 0 or -ve, this won't work
+
 ### A. 187 Repeated DNA Sequences
 
 ```cpp
