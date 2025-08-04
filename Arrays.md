@@ -43,3 +43,42 @@ public:
     }
 };
 ```
+
+### 88. Merge Sorted Array
+
+```cpp
+    void merge(vector<int>& a, int m, vector<int>& b, int n) {
+        int i = m - 1, j = n - 1, k = m + n - 1;
+
+        while(j >= 0) {
+            if(i >= 0 && a[i] > b[j]) {
+                a[k] = a[i];
+                i--;
+            } else {
+                a[k] = b[j];
+                j--;
+            }
+            k--;
+        }
+    }
+```
+
+in case, if size of num1!= m + n, where m is no of elements in num1 except trial zeroes and n is no of elements in num2
+then 
+we need to do, `num1=[1,2,3,4,5] num2=[6,7,8,9]` i.e 
+```cpp
+    int left = n - 1;
+    int right = 0;
+
+    //Swap the elements until arr1[left] is
+    // smaller than arr2[right]:
+    while (left >= 0 && right < m) {
+        if (arr1[left] > arr2[right]) {
+            swap(arr1[left], arr2[right]);
+            left--, right++;
+        } else break;
+    }
+
+    // Sort arr1[] and arr2[] individually:
+```
+Another optimal solution is, Gap method or Shell Sort
